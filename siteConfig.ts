@@ -2,17 +2,17 @@
 
 export const siteConfig = {
   // 1. 网站标题与博主信息
-  title: "XingHuiSama の 宝藏之地",
+  title: "远坂のBlog",
   faviconUrl: "https://bu.dusays.com/2026/03/24/69c1e38ac1846.jpg",
-  authorName: "XingHuiSama",
-  bio: "在代码、学术与分子动力学模拟间穿梭的普通人。近期正埋头于 GROMACS 模拟研究与神经网络计算。",
+  authorName: "TohsakaRinz",
+  bio: "一个东一榔头西一棒槌的技术爱好者",
 
-  navTitle: "XingHuiSama",
+  navTitle: "TohsakaRinz",
 
   // 👇 【新增】导航栏中间的那个后缀/分隔符（默认是 の）
   navSuffix: "の",
 
-  navAfter: "宝藏之地",
+  navAfter: "藏身处",
 
   // 2. 头像设置 (支持网络链接，或将图片放入 public 文件夹后使用 "/me.jpg")
   avatarUrl: "https://bu.dusays.com/2026/03/24/69c1e38ac1846.jpg",
@@ -31,12 +31,12 @@ export const siteConfig = {
   photoWallImage: "https://bu.dusays.com/2026/03/24/69c1e38b4c370.jpg",
   cloudMusicIds: ["1809646618", "3361076230", "1859390262"],
   social: {
-    github: "https://github.com/heiehiehi",
-    gitee: "https://github.com/heiehiehi",
-    google: "mailto:bilibiliwuwuwu@gmail.com",
-    email: "1124533793@qq.com",
+    github: "https://github.com/TohsakaRinz",
+    gitee: "",
+    google: "2996462943@qq.com",
+    email: "2996462943@qq.com",
     qq: "1124533793",
-    wechat: "XingHuisama",
+    wechat: "TohsakaRin622",
   },
   counts: {
     photos: 128, // 照片墙数量可以手动写死或动态计算
@@ -66,6 +66,6 @@ export const siteConfig = {
     maxOutputTokens: 150,
     temperature: 0.85,
   },
-  friendLinkApplyFormat: "名称：XingHuiSamaの宝藏之地\n简介：今天我也要学习吗\n链接：https://www.xinghuisama.top\n头像：https://bu.dusays.com/2026/03/24/69c1e38ac1846.jpg",
+  friendLinkApplyFormat: "",
   enableLevelSystem: true,
 };

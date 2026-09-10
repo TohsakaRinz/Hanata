@@ -5,7 +5,7 @@ export const siteConfig = {
   title: "远坂のBlog",
   faviconUrl: "https://free.picui.cn/free/19559/2026/09/10/6aa244f6c428c.jpg",
   authorName: "TohsakaRinz",
-  bio: "一个东一榔头西一棒槌的技术爱好者",
+  bio: "一个普通的技术爱好者",
 
   navTitle: "TohsakaRinz",
 

@@ -3,7 +3,7 @@
 export const siteConfig = {
   // 1. 网站标题与博主信息
   title: "远坂のBlog",
-  faviconUrl: "https://bu.dusays.com/2026/03/24/69c1e38ac1846.jpg",
+  faviconUrl: "https://free.picui.cn/free/19559/2026/09/10/6aa244f6c428c.jpg",
   authorName: "TohsakaRinz",
   bio: "一个东一榔头西一棒槌的技术爱好者",
 
@@ -15,7 +15,7 @@ export const siteConfig = {
   navAfter: "藏身处",
 
   // 2. 头像设置 (支持网络链接，或将图片放入 public 文件夹后使用 "/me.jpg")
-  avatarUrl: "https://bu.dusays.com/2026/03/24/69c1e38ac1846.jpg",
+  avatarUrl: "https://free.picui.cn/free/19559/2026/09/10/6aa244f6c428c.jpg",
 
   // 3. 网站背景设置 (二选一)
   // 如果想用纯图片背景，请在下面 bgImage 写路径，并将 useGradient 设为 false

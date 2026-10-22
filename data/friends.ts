@@ -1,4 +1,4 @@
-// 🛡️ 本文件由 XingHuiSama 控制台自动生成
+// 友链数据；保留已有《明日方舟》主题 PRTS 链接作为站点元素。
 export interface Friend { id: string; name: string; url: string; description: string; avatar: string; themeColor: string; }
 
 export const friendsData: Friend[] = [

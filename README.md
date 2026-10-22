@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 远坂のBlog · TohsakaRinz の 藏身处
 
-## Getting Started
+一个记录技术实验与生活碎片的个人站点，基于 Next.js 16、React 19 和 Tailwind CSS 4。
 
-First, run the development server:
+- 线上计划域名：https://www.tohsaka.site （需要在 Vercel 与 DNS 中另行配置）
+- GitHub：https://github.com/TohsakaRinz
+- 内容：CiRCLE Wangan、CiRCLE Garage 2.0、Android 4.2 车机实验、硬件排障、AI 工具与游戏相关随想
+
+## 本地开发
+
+需要 Node.js 20.9 或更新版本。
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 http://localhost:3000 查看本地站点；`npm run build` 用于构建验证。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 内容组织
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `posts/`：Markdown 技术文章
+- `chatters/`：Markdown 杂谈
+- `moments/`：Markdown 短动态
+- `app/about/about.md`：关于我正文
+- `data/projects.ts`：项目展示
+- `siteConfig.ts`：个人资料、外观、音乐、天气、备案及社交入口配置
 
-## Learn More
+## XHBlogs 管理器同步提醒
 
-To learn more about Next.js, take a look at the following resources:
+本站代码和本地 `my-blog-manager` 各有独立的 `siteConfig.ts`，管理器的「同步 Blog」操作会覆盖目标文件并替换部分内容目录。同步前必须先备份，再确认双方配置一致，避免恢复原作者默认数据。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 项目来源与署名
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+本站基于 [XHBlogs / XinghuisamaBlogs](https://github.com/heiehiehi/XinghuisamaBlogs) 进行个人化改造。原项目作者及其贡献应获得适当署名；请遵守原项目声明的 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) 许可。这个来源说明是开源归属，不代表原作者的姓名、研究经历或联系方式属于本站博主。

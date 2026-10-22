@@ -12,8 +12,10 @@ export default function LabComments({ pageId }: { pageId?: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
+  const commentsEnabled = Boolean(siteConfig.gitalkConfig.clientID && siteConfig.gitalkConfig.repo && siteConfig.gitalkConfig.owner);
+
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!commentsEnabled || !containerRef.current) return;
 
     // 清空之前的评论区，防止切换月份时叠加
     containerRef.current.innerHTML = '';
@@ -42,6 +44,8 @@ export default function LabComments({ pageId }: { pageId?: string }) {
     }
 
   }, [pathname, pageId]);
+
+  if (!commentsEnabled) return null;
 
   return (
     <div className="w-full mt-16 relative">

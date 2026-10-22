@@ -27,6 +27,7 @@ export default function FriendsBoard() {
 
   // 🌟 直接从 siteConfig 读取申请格式
   const applyFormat = siteConfig.friendLinkApplyFormat;
+  const commentsEnabled = Boolean(siteConfig.gitalkConfig.clientID && siteConfig.gitalkConfig.repo && siteConfig.gitalkConfig.owner);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(applyFormat);
@@ -109,7 +110,7 @@ export default function FriendsBoard() {
           ✨ 建立神经连接
         </h2>
         <p className="text-xs md:text-base text-slate-600 dark:text-slate-400 font-serif mb-4 md:mb-6">
-          欢迎各位大佬交换友链！请一键复制下方格式，并在底部的 Gitalk 留言板申请：
+          {commentsEnabled ? '欢迎交换友链！可以复制下方本站信息，再通过评论区留言申请。' : '本站目前尚未开放留言申请。以下是本站的友链信息，可以先复制保存。'}
         </p>
 
         {/* 代码展示框 & 一键复制按钮 */}
@@ -120,6 +121,7 @@ export default function FriendsBoard() {
 
           <button
             onClick={handleCopy}
+            disabled={!applyFormat}
             className="absolute top-2 right-2 md:top-3 md:right-3 p-1.5 md:p-2 rounded-lg bg-white/80 dark:bg-slate-800/80 hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-500 transition-all duration-300 shadow-sm backdrop-blur-sm"
             title="一键复制"
           >
@@ -135,18 +137,18 @@ export default function FriendsBoard() {
           </button>
         </div>
 
-        <div className="mt-6 md:mt-8">
+        {commentsEnabled && <div className="mt-6 md:mt-8">
           <a
             href="#gitalk-container"
             className="inline-block px-6 py-2.5 md:px-8 md:py-3 bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white rounded-full text-sm md:text-base font-bold tracking-widest transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-indigo-500/30"
           >
             前往留言区申请 👇
           </a>
-        </div>
+        </div>}
       </motion.div>
 
       {/* Gitalk 评论区 */}
-      <motion.div
+      {commentsEnabled && <motion.div
         id="gitalk-container"
         className="mt-12 md:mt-16 scroll-mt-24 px-2 md:px-0"
         initial={{ opacity: 0 }}
@@ -164,7 +166,7 @@ export default function FriendsBoard() {
 
         {/* 渲染评论组件 */}
         <Comments />
-      </motion.div>
+      </motion.div>}
 
     </div>
   );

@@ -12,8 +12,10 @@ interface MomentCommentsProps {
 export default function MomentComments({ id }: MomentCommentsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const commentsEnabled = Boolean(siteConfig.gitalkConfig.clientID && siteConfig.gitalkConfig.repo && siteConfig.gitalkConfig.owner);
+
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!commentsEnabled || !containerRef.current) return;
 
     // 清空重载，防止 React 严格模式下重复渲染
     containerRef.current.innerHTML = '';
@@ -31,6 +33,8 @@ export default function MomentComments({ id }: MomentCommentsProps) {
 
     gitalk.render(containerRef.current);
   }, [id]);
+
+  if (!commentsEnabled) return null;
 
   return (
     <div className="w-full relative">

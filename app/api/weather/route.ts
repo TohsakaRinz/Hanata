@@ -1,9 +1,10 @@
 // app/api/weather/route.ts
 import { NextResponse } from 'next/server';
+import { siteConfig } from '../../../siteConfig';
 
 export async function GET() {
   const token = process.env.QWEATHER_KEY;
-  const locationId = "101010100"; // 北京
+  const locationId = siteConfig.weatherLocationId; // 南京市：来自统一站点配置
 
   if (!token) {
     console.error("❌ 环境变量 QWEATHER_KEY (Token) 未找到");
@@ -36,7 +37,7 @@ export async function GET() {
       const data = await res.json();
 
       // 如果返回 200，说明这套 Bearer 认证终于对上暗号了！
-      if (data.code === "200" || res.status === 200) {
+      if (data.code === "200" && data.now) {
         console.log(`✅ 认证通过! 来源: ${host}`);
         return NextResponse.json(data);
       }
